@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>ROI Calculator</h1>
+        <form id="roiForm">
+            <div class="input-group">
+                <label>Daily Wasted Hours per Employee:</label>
+                <input type="number" id="dailyWastedHours" required>
+            </div>
+
+            <div class="input-group">
+                <label>Number of Employees:</label>
+                <input type="number" id="employees" required>
+            </div>
+
+            <div class="input-group">
+                <label>Total Working Hours per Day:</label>
+                <input type="number" id="workingHours" required>
+            </div>
+
+            <div class="input-group">
+                <label>Total Working Days per Year:</label>
+                <input type="number" id="workingDays" required>
+            </div>
+
+            <div class="input-group">
+                <label>Average Annual Salary per Employee:</label>
+                <input type="number" id="annualSalary" required>
+            </div>
+
+            <div class="input-group">
+                <label>Employees Who Quit per Year:</label>
+                <input type="number" id="quitEmployees" required>
+            </div>
+
+            <div class="input-group">
+                <label>Efficiency Improvement Percentage:</label>
+                <input type="number" id="efficiencyImprovement" required>
+            </div>
+
+            <div class="input-group">
+                <label>Investment Cost:</label>
+                <input type="number" id="investmentCost" required>
+            </div>
+
+            <div class="input-group">
+                <label>Employee Turnover Cost Percentage:</label>
+                <input type="number" id="turnoverPercentage" required>
+            </div>
+
+            <div class="input-group">
+                <label>Project Cost:</label>
+                <input type="number" id="projectCost" required>
+            </div>
+
+            <div class="input-group">
+                <label>Expected Revenue Increase Percentage:</label>
+                <input type="number" id="revenueIncreasePercentage" required>
+            </div>
+
+            <button type="button" onclick="calculateROI()">Calculate ROI</button>
+        </form>
+
+        <div id="results">
+            <h2>Results:</h2>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody"></tbody>
+            </table>
+
+            <button onclick="exportToPDF()">Download PDF</button>
+            <button onclick="exportToCSV()">Download CSV</button>
+
+            <canvas id="roiChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
